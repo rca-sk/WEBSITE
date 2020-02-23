@@ -1,0 +1,117 @@
+
+
+/*GENERAL SHARED TEMPLATE*/
+
+body{
+  
+  background-color: rgba(255, 255, 255, 0.973);
+  
+}
+p{
+  font-size: 20px;
+}
+
+a{
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+}
+a:hover{
+  color:rgb(49, 212, 104);
+}
+img{
+  -webkit-transform: scale(1.5);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+img:hover{
+  -webkit-transform: scale(1);
+	transform: scale(0.9);
+}
+
+
+
+hr { 
+  
+  border-width: 2px;
+  color: rgb(17, 16, 16);
+  width: 90%;
+}
+
+
+/*navbar*/
+
+.navbar {
+  background-color:white !important;
+  position: fixed;
+  top:0;
+  z-index:1;
+  width: 100%;
+  min-height: 7vh;
+}
+
+/* 
+FFC971
+*/
+
+
+.dropdown-menu {
+  background-color:rgb(255, 255, 255) !important;
+}
+
+
+.navbar li{
+  font-size: 20px;
+  font-weight: 600 !important;
+}
+
+.navbar li a{
+  color:black !important;
+}
+
+.navbar li a:hover{
+  color:rgb(0, 0, 0) !important;
+}
+
+
+/*footer*/
+
+
+/* END--- GENERAL SHARED TEMPLATE*/
+
+/* page1 */
+.home-1{
+  height: 100vh;
+  background-image: url('../images/seoul2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+.message{
+color: white;
+font-weight: bold;;
+border: thick solid #F4ECEA;
+padding: 8vh;
+font-size: 6vh;
+}
+
+
+/*registration-page*/
+
+.card-body {
+  margin: 5vh 0;
+  background: #f7f7f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 5vh;
+  min-width: 50vh;
+}
+
+
+
+

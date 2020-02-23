@@ -1,0 +1,147 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rwandans in Korea</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/rwandakorea.jpeg' %}" />
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <!-- font-awesome -->
+  <script src="js/all.js"></script>
+  <!-- google-fonts -->
+  <link href="https://fonts.google.com/specimen/Roboto?selection.family=Roboto" rel="stylesheet">  
+  <!-- main-css -->
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <!-- nice-pictures from PEXELS -->
+  <!-- color code generator, coolors.co -->
+</head>
+
+<body>
+
+<!-- navbar -->
+<nav class="navbar navbar-expand-md navbar-dark ">
+  <a href="{% url 'index' %}l" class="navbar-brand"> <img src="{% static 'images/rwandakorea.jpeg' %}" height="40" alt="rca-sk" > 
+    <strong style="color: black;">Rwandans in Korea</strong> </a>
+ 
+
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu" style="background-color:black;">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarMenu">
+    <ul class="navbar-nav mx-4">
+      <li class="nav-item mr-4">
+        <a href="{% url 'index' %}" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'committee' %}" class="nav-link">Committee</a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'announcements' %}" class="nav-link">Announcements</a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'events' %}" class="nav-link">Events</a>
+      </li>
+    </ul>
+    
+
+    <ul class="navbar-nav" style="position: fixed; right:2vw;" >
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user"></i> Profile </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+          <a class="dropdown-item" href="{% url 'index' %}">Log in</a>
+          <a class="dropdown-item" href="{% url 'index' %}">Sign up</a>
+        </div>
+      </li>
+    </ul>
+
+  </div> 
+</nav>
+<!-- end-navbar -->
+
+<br>
+
+
+<br><br><br>
+
+
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+    <div class="card" style="border: none;">
+      <article class="card-body mx-auto">
+        <h4 class="card-title text-center">Log in</h4>
+        
+        <form>
+         
+          <!-- form-group// -->
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+          </div>
+              <input name="" class="form-control" placeholder="Email" type="email">
+          </div> 
+       
+          <!-- form-group// -->
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+              <input class="form-control" placeholder="Password" type="password">
+          </div> 
+       
+          <!-- form-group// -->                                      
+          <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block"> Log in  </button>
+          </div> <!-- form-group// --> 
+          <p class="text-center">or</p>    
+          <p class="text-center"><a href="{% url 'index' %}">create account</a> </p>                                                                 
+      </form>
+      </article>
+  </div> 
+</div>
+</div>
+</div>
+</div> 
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<div class=" footer py-4 text-center" style="background-color:rgb(255, 255, 255) ; color: rgb(0, 0, 0); width: 100%; margin-left:0px;">
+  <b>
+  © 2020  RCA-SK  All Rights Reserved
+  </b>
+</div>
+    
+<!-- end-footer -->
+
+
+
+
+
+<!-- jquery -->
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<!-- bootstrap js -->
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<!-- main js -->
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rwandans in Korea</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/rwandakorea.jpeg' %}" />
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <!-- font-awesome -->
+  <script src="{% static 'js/all.js' %}"></script>
+  <!-- google-fonts -->
+  <link href="https://fonts.google.com/specimen/Roboto?selection.family=Roboto" rel="stylesheet">  
+  <!-- main-css -->
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <!-- nice-pictures from PEXELS -->
+  <!-- color code generator, coolors.co -->
+</head>
+
+<body>
+
+<!-- navbar -->
+<nav class="navbar navbar-expand-md navbar-dark ">
+  <a href="{% url 'index' %}" class="navbar-brand"> <img src="{% static 'images/rwandakorea.jpeg' %}" height="40" alt="rca-sk" > 
+    <strong style="color: black;">Rwandans in Korea</strong> </a>
+ 
+
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu" style="background-color:black;">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarMenu">
+    <ul class="navbar-nav mx-4">
+      <li class="nav-item mr-4">
+        <a href="{% url 'index' %}" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'committee' %}" class="nav-link">Committee</a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'announcements' %}" class="nav-link">Announcements</a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'events' %}" class="nav-link">Events</a>
+      </li>
+    </ul>
+    
+
+    <ul class="navbar-nav" style="position: fixed; right:2vw;" >
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user"></i> Profile </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+          <a class="dropdown-item" href="{% url 'index' %}">Log in</a>
+          <a class="dropdown-item" href="{% url 'index' %}">Sign up</a>
+        </div>
+      </li>
+    </ul>
+
+  </div> 
+</nav>
+<!-- end-navbar -->
+
+<br>
+
+
+<!-- society stories -->
+
+<br><br><br> <br>
+<h4 style="margin-left: 5%; font-style:italic; font-family:'Times New Roman', Times, serif; font-size:30px;">RCA-SK Committee</h4>
+<hr><br>
+
+<div class="container">
+<h4 style="margin-left: 5%; font-style:italic; font-family:'Times New Roman', Times, serif; font-size:30px;">Executive committee</h4>
+<hr>
+<div class="row py-4">
+    
+    <div class="col-12 col-lg-6 my-3">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <h3><b>Chairman</b></h3>
+                <p><b> Uzabakiriho Abdul Kalim</b></p>
+                <p><small> Ph.D student at Soon Chun Hyang University</small></p>
+                <p> <small>Phone: (+82) 010-7151-7716</small> </p>
+                <p> <small>Email: abuzabak7@gmail.com</small> </p>
+            </div>
+            <div class="col-6"><img class="card-img-top" src="images/chairman.jpg" style="width: 30vh; border-radius:50%"></div>
+        </div>
+        <hr> 
+    </div>
+
+    <div class="col-12 col-lg-6 my-3">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <h3><b>Vice Chairman</b></h3>
+                <p><b> Gahima Ivan</b></p>
+                <p><small> Masters student at KonKuk University</small></p>
+                <p> <small>Phone: (+82) 010-4037-4139</small> </p>
+                <p> <small>Email: gahima.ivan@gmail.com</small> </p>
+            </div>
+            <div class="col-12 col-lg-6"><img class="card-img-top" src="images/ivan.jpg" style="width: 30vh; border-radius:50%"></div>
+        </div>
+        <hr>  
+    </div>
+    <div class="col-12 col-lg-6 my-3">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <h3><b>Secretary</b></h3>
+                <p><b> Umwiza Ange Aisha</b></p>
+                <p><small>Undergraduate student at Yonsei University </small></p>
+                <p> <small>Phone: (+82) 010-3078-9803</small> </p>
+                <p> <small>Email: angeaaisha@gmail.com</small> </p>
+            </div>
+            <div class="col-12 col-lg-6"><img class="card-img-top" src="images/aisha.jpg" style="width: 30vh; border-radius:50%"></div>
+        </div>
+        <hr>  
+    </div>
+    <div class="col-12 col-lg-6 my-3">
+      <div class="row">
+          <div class="col-12 col-lg-6">
+              <h3><b>Treasurer</b></h3>
+              <p><b> Joseph Mfitumukiza</b></p>
+              <p><small> Ph.D student at Seoul National University</small></p>
+              <p> <small>Phone: (+82) 010-3581-4424</small> </p>
+              <p> <small></small> </p>
+          </div>
+          <div class="col-12 col-lg-6"><img class="card-img-top" src="images/joseph.jpg" style="width: 30vh; border-radius:50%"></div>
+      </div>
+      <hr>  
+  </div>
+    <div class="col-12 col-lg-6 my-3">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <h4><b>Public Relations & Communications officer</b></h4>
+                <p><b> Adriel Niyodusaba</b></p>
+                <p><small>Undergraduate student at Yonsei University</small></p>
+                <p> <small>Phone: (+82) 010-9998-7109</small> </p>
+                <p> <small>Email: siradriel@gmail.com</small> </p>
+            </div>
+            <div class="col-12 col-lg-6"><img class="card-img-top" src="images/adriel.jpg" style="width: 30vh; border-radius:50%"></div>
+        </div>
+        <hr>  
+    </div>
+    <div class="col-12 col-lg-6 my-3">
+      <div class="row">
+          <div class="col-12 col-lg-6">
+              <h3><b>Commissioner for Gender</b></h3>
+              <p><b> Alice Muhorakeye</b></p>
+              <p>Masters student at Yonsei University</p>
+              <p> <small>Phone: (+82) 010-5964-1600</small> </p>
+              <p> <small>Email: alicemuhorakeye@gmail.com</small> </p>
+          </div>
+          <div class="col-12 col-lg-6"><img class="card-img-top" src="images/alice.jpg" style="width: 30vh; border-radius:50%"></div>
+      </div>
+      <hr>  
+    </div>
+    <div class="col-12 col-lg-6 my-3">
+      <div class="row">
+          <div class="col-12 col-lg-6">
+              <h4><b>Commissioner for Culture, Leisure and Sport officer</b></h4>
+              <p><b> Theos Dieudonne BENIMANA</b></p>
+              <p>Masters student at Seoul National University</p>
+              <p> <small>Phone: (+82) 010-3376-4552</small> </p>
+              <p> <small>Email: nadjib701@gmail.com</small> </p>
+          </div>
+          <div class="col-12 col-lg-6"><img class="card-img-top" src="images/theo.jpg" style="width: 30vh; border-radius:50%"></div>
+      </div>
+      <hr>  
+    </div>
+    <div class="col-12 col-lg-6 my-3">
+      <div class="row">
+          <div class="col-12 col-lg-6">
+              <h3><b>Commissioner for counseling and career guidance</b></h3>
+              <p><b> Nishimwe H. Leon Fidele</b></p>
+              <p>Masters+Phd student at Soongsil University</p>
+              <p> <small>Phone: (+82) 010-5864-2618</small> </p>
+              <p> <small>Email: gashukaleon@gmail.com</small> </p>
+          </div>
+          <div class="col-12 col-lg-6"><img class="card-img-top" src="images/leo.jpg" style="width: 30vh; border-radius:50%"></div>
+      </div>
+      <hr>  
+    </div>
+    <div class="col-12 col-lg-6 my-3">
+      <div class="row">
+          <div class="col-12 col-lg-6">
+              <h3><b>Auditor</b></h3>
+              <p><b>Paul Migisha Ntwari</b></p>
+              <p>Masters Student at Korea University</p>
+          </div>
+          <div class="col-12 col-lg-6"><img class="card-img-top" src="images/rwandakorea.jpeg" style="width: 30vh; border-radius:50%"></div>
+      </div>
+      <hr>  
+    </div>
+    <div class="col-12 col-lg-6 my-3">
+      <div class="row">
+          <div class="col-12 col-lg-6">
+              <h3><b>Auditor</b></h3>
+              <p><b> Vestine Abimana</b></p>
+              <p>Masters student at Konkuk University</p>
+          </div>
+          <div class="col-12 col-lg-6"><img class="card-img-top" src="images/rwandakorea.jpeg" style="width: 30vh; border-radius:50%"></div>
+      </div>
+      <hr>  
+    </div>
+    <div class="col-12 col-lg-6 my-3">
+      <div class="row">
+          <div class="col-12 col-lg-6">
+              <h3><b>Advisory board and disciplinary committee</b></h3>
+              <p><b> Placide Bagabo</b></p>
+              <p>Masters student at Seoul National University</p>
+             
+          </div>
+          <div class="col-12 col-lg-6"><img class="card-img-top" src="images/placide.jpg" style="width: 30vh; border-radius:50%"></div>
+      </div>
+      <hr>  
+    </div>
+    <div class="col-12 col-lg-6 my-3">
+      <div class="row">
+          <div class="col-12 col-lg-6">
+              <h3><b>Advisory board and disciplinary committee</b></h3>
+              <p><b> Gaspard Harerimana</b></p>
+              <p>Ph.D student at Sangmyung University</p>
+          </div>
+          <div class="col-12 col-lg-6"><img class="card-img-top" src="images/rwandakorea.jpeg" style="width: 30vh; border-radius:50%"></div>
+      </div>
+      <hr>  
+    </div>
+    <div class="col-12 col-lg-6 my-3">
+      <div class="row">
+          <div class="col-12 col-lg-6">
+              <h3><b>Advisory board and disciplinary committee</b></h3>
+              <p><b> Faith Abatoni</b></p>
+              <p>Masters student at Sungkyunkwan University</p>
+          </div>
+          <div class="col-12 col-lg-6"><img class="card-img-top" src="images/faith.jpg" style="width: 30vh; border-radius:50%"></div>
+      </div>
+      <hr>  
+    </div>
+    
+
+
+  </div>
+
+</div>
+
+
+
+<br><br><br>
+<div class="container">
+<h4 style="margin-left: 5%; font-style:italic; font-family:'Times New Roman', Times, serif; font-size:30px;">Mayors</h4>
+<hr>
+<div class="row py-4">
+    
+    <div class="col-12 col-lg-6 my-3">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <h3><b>Seoul</b></h3> <br>
+                <p><b> Adolphe Niyigena</b></p>
+                <p>Engineer at Covic Power</p>
+                <p>Phone: (+82) 010-9862-0978</p>
+                <p>Email: niyigenado87@gmail.com</p>
+            </div>
+            <div class="col-12 col-lg-6"><br><br><img class="card-img-top" src="images/adolphe.jpg" style="width: 30vh; border-radius:50%"></div>
+        </div>
+        <hr>  
+    </div>
+
+    <div class="col-12 col-lg-6 my-3">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <h3><b>Busan</b></h3> <br>
+                <p><b>Uwitonze Hosanna</b></p>
+                <p>Ph.D student at Busan National University</p>
+                <p> <small>Phone: (+82) 010-7312-6930</small> </p>
+                <p> <small>hosanna14@gmail.com</small> </p>
+            </div>
+            <div class="col-12 col-lg-6"><img class="card-img-top" src="images/rwandakorea.jpeg" style="width: 30vh; border-radius:50%"></div>
+        </div>
+        <hr>  
+    </div>
+    <div class="col-12 col-lg-6 my-3">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <h3><b>Daegu</b></h3> <br>
+                <p><b>Rev Pasteur Innocent</b></p>
+                <p></p>
+                <p> <small>Phone: (+82) 010-5259-37748</small> </p>
+                <p> <small> </small> </p>
+            </div>
+            <div class="col-12 col-lg-6"><img class="card-img-top" src="images/innocent.jpg" style="width: 30vh; border-radius:50%"></div>
+        </div>
+        <hr>  
+    </div>
+    <div class="col-12 col-lg-6 my-3">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <h3><b>Gwangju</b></h3>
+                <p><b> Ndagijimana Frank Aimee Rodrigue</b></p>
+                <p>Undergraduate student at Chosun University</p>
+                <p> <small>Phone: (+82) 010-3739-6561</small> </p>
+                <p> <small>Email: rodfrank01@gmail.com</small> </p>
+            </div>
+            <div class="col-12 col-lg-6"><img class="card-img-top" src="images/rodrig.jpg" style="width: 30vh; border-radius:50%"></div>
+        </div>
+        <hr>  
+    </div>
+    <div class="col-12 col-lg-6 my-3">
+      <div class="row">
+          <div class="col-12 col-lg-6">
+              <h3><b>Daejeon</b></h3>
+              <p><b> Felix</b></p>
+              <p></p>
+              <p> <small>Phone: (+82) 010-6540-1551</small> </p>
+              <p> <small></small> </p>
+          </div>
+          <div class="col-12 col-lg-6"><img class="card-img-top" src="images/rwandakorea.jpeg" style="width: 30vh; border-radius:50%"></div>
+      </div>
+      <hr>  
+  </div>
+  <div class="col-12 col-lg-6 my-3">
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <h3><b>Jinju</b></h3>
+            <p><b> Rugira Trojan</b></p>
+            <p>Pharmacologist at Gyeongsang National University</p>
+            <p> <small>Phone: (+82) 010-6277-5851</small> </p>
+            <p> <small>rugirawacu@gmail.com</small> </p>
+        </div>
+        <div class="col-12 col-lg-6"><img class="card-img-top" src="images/rwandakorea.jpeg" style="width: 30vh; border-radius:50%"></div>
+    </div>
+    <hr>  
+</div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<div class=" footer py-4 text-center" style="background-color:rgb(255, 255, 255) ; color: rgb(0, 0, 0); width: 100%; margin-left:0px;">
+  <b>
+  © 2020  RCA-SK  All Rights Reserved
+  </b>
+</div>
+    
+<!-- end-footer -->
+
+
+
+
+
+<!-- jquery -->
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<!-- bootstrap js -->
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<!-- main js -->
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

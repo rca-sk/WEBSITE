@@ -1,0 +1,28 @@
+#header{
+    height: 50px;
+    background: #103fa3de;
+    color: white;
+    font-family: monospace;
+}
+
+#branding h1{
+    color: white;
+}
+
+a:link,
+a:visited{
+    color: rgb(175, 74, 49);
+}
+
+div.breadcrumbs{
+    background: #103fa3de;
+}
+
+div.breadcrumbs a{
+    color: rgb(218, 49, 49)
+}
+
+.module h2, .module caption, inline-group h2{
+    background-color: #103fa3de;
+    font-family: monospace;
+}

@@ -1,0 +1,44 @@
+MODEL/ DB FIELDS
+
+
+## announcements
+id: int
+title
+summary
+detail
+time
+posted_by
+is_displayed
+send_to_committee
+send_to_all_members
+
+
+
+## events
+id: int
+title
+summary
+detail
+event_pictures
+time
+posted_by
+is_displayed
+send_to_committee
+send_to_all_members
+
+## committee
+# 1. executive committee
+title
+name
+brief_intro
+phone
+email
+picture
+
+# 2. Mayors
+title
+name
+brief_intro
+phone
+email
+picture
