@@ -1,11 +1,19 @@
 from django.shortcuts import render
-
+from .models import Announcement
 # Create your views here.
 
 def index(request):
-    return render(request, 'announcements.html')
+    announcements = Announcement.objects.order('-time').filter(is_published=True)
+    context = {
+        'announcements' : announcements
+    }
+    return render(request, 'announcements.html', context)
 
 
 
-def announcement(request):
-    return render(request, 'announcements.html')
+def announcement(request, announcement_id):
+    announcement = Announcement.objects.filter(id=announcement_id)
+    context = {
+        'announcement' : announcement[0]
+    }
+    return render(request, 'announcement.html', context)

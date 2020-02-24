@@ -75,50 +75,21 @@
 <hr><br>
 
 <div class="container">
-
-<div class="row py-4">
-    <div class="col-xs-12 col-sm-10 col-md-7 pt-2">
-      <a href=""><h1><b>National Heroes Day Postponed</b></h1></a>
-      <p>In face of the existential threat from the corona virus, the celebration of the national heroes day has been shifted
-        from 5th February to 29th February 2020.</p>
-      <small><i class="fas fa-clock" style="color: red;"></i> 9 Days Ago</small>
-    </div>
-  </div>
-
+{% if announcements %}
+  {% for announcement in announcements%}
   <div class="row py-4">
     <div class="col-xs-12 col-sm-10 col-md-7 pt-2">
-      <a href=""><h1><b>Updating RCS-SK database</b></h1></a>
-      <p>In order to obtain updated information about the state of our community as of 2020, a survey will be conducted
-        via our whatsapp platform. Members are kindly asked to cooperate.</p>
-      <small><i class="fas fa-clock" style="color: red;"></i> 15 Days Ago</small>
+      <a href="{% url 'announcement' announcement.id %}"><h1><b>{{announcement.title}}</b></h1></a>
+      <p>{{announcement.summary}}</p>
+      <small><i class="fas fa-clock" style="color: red;"></i> {{announcement.time}}</small> <br> <small>By: {{announcement.posted_by}}</small>
     </div>
   </div>
-  <div class="row py-4">
-    <div class="col-xs-12 col-sm-10 col-md-7 pt-2">
-      <a href=""><h1><b>East African Nite</b></h1></a>
-      <p>This 24th January 2020 all East Africans living in Korea are invited in the EAC night event that will take place at Itaewon View33.
-        entrance ticket will cost 10,000 won with 1 free drink and the code is going to be black-white/ black-gold. For more details please
-        contact any of the following people: Chairman, PR, Sports and cultural activities officer.  
-        (you may find their contacts on the <a href="committee.html" style="color:brown;">committee page</a> )
-      </p>
-      <small><i class="fas fa-clock" style="color: red;"></i> 30 Days Ago</small>
-    </div>
-  </div>
+  {% endfor%}
+{% else %}
 
-
-
-
-
- 
+{% endif %}
 
 </div>
-
-
-
-
-
-
-
 
 
 

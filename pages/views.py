@@ -1,18 +1,13 @@
 from django.shortcuts import render
 
-# Create your views here.
+from announcements.models import Announcement
+from events.models import Event
 
 def index(request):
-    return render(request, 'index.html')
-
-
-def committee(request):
-    return render(request, 'committee.html')
-
-
-def announcements(request):
-    return render(request, 'announcements.html')
-
-
-def events(request):
-    return render(request, 'events.html')
+    recent_announcements = Announcement.objects.order_by('-time').filter(is_published=True)[:3]
+    recent_events        = Event.objects.order_by('-time').filter(is_published=True)[:3]
+    context = {
+        'recent_announcements' : recent_announcements,
+        'recent_events'        : recent_events
+    }
+    return render(request, 'index.html', context)

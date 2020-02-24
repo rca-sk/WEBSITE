@@ -74,26 +74,20 @@
 <hr><br>
 
 <div class="container">
-
-  <div class="row py-4">
-    <div class="col-xs-12 col-sm-10 col-md-7 pt-2">
-      <a href=""><h1><b>February 29th 2020</b></h1></a>
-      <p>National Heroed Day Celebration</p>
-      <small><i class="fas fa-clock" style="color: red;"></i> 9 Days Ago</small>
+{% if events %}
+  {% for event in events%}
+    <div class="row py-4">
+      <div class="col-xs-12 col-sm-10 col-md-7 pt-2">
+        <a href="{% url 'event' event.id %}"><h1><b>{{event.title}}</b></h1></a>
+        <p>{{event.summary}}</p>
+        <small><i class="fas fa-clock" style="color: red;"></i> {{event.time}}</small> <br>
+        <small>Posted by: {{event.posted_by}}</small>
+      </div>
     </div>
-  </div>
-
-  <div class="row py-4">
-    <div class="col-xs-12 col-sm-10 col-md-7 pt-2">
-      <a href=""><h1><b>January 24th 2020</b></h1></a>
-      <p>East Arican Nite</p>
-      <small><i class="fas fa-clock" style="color: red;"></i> 30 Days Ago</small>
-    </div>
-  </div>
-
-
- 
-
+  {% endfor %}
+{% else %}
+{% endif %}
+  
 </div>
 
 
