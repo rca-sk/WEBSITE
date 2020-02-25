@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime
-
+from django.core.mail import send_mail
 # Create your models here.
 
 class Announcement(models.Model):
@@ -19,3 +19,24 @@ class Announcement(models.Model):
 
     def __str__(self):
         return self.title
+
+
+    def save(self, *args, **kwargs):
+        super(Announcement, self).save(*args, **kwargs)
+
+        if self.send_to_committee:
+            send_mail(
+                self.title,
+                self.detail,
+                'rcaskcommittee@gmail.com',
+                ['adriel.tech.email@gmail.com'],
+                fail_silently = False
+            )
+        if self.send_to_all_members:
+            send_mail(
+                self.title,
+                self.detail,
+                'rcaskcommittee@gmail.com',
+                ['adriel.tech.email@gmail.com', 'siradriel@gmail.com'],
+                fail_silently=False
+            )

@@ -11,7 +11,7 @@
   <!-- bootstrap css -->
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   <!-- font-awesome -->
-  <script src="js/all.js"></script>
+  <script src="{% static 'js/all.js' %}"></script>
   <!-- google-fonts -->
   <link href="https://fonts.google.com/specimen/Roboto?selection.family=Roboto" rel="stylesheet">  
   <!-- main-css -->
@@ -49,17 +49,30 @@
     </ul>
     
 
+    {%  if user.is_authenticated %}
     <ul class="navbar-nav" style="position: fixed; right:2vw;" >
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user"></i> Profile </a>
+          <i class="fas fa-user"></i> {{user.username}} </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-          <a class="dropdown-item" href="{% url 'index' %}">Log in</a>
-          <a class="dropdown-item" href="{% url 'index' %}">Sign up</a>
+          <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
         </div>
       </li>
     </ul>
+    {% else %}
+      <ul class="navbar-nav" style="position: fixed; right:2vw;" >
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user"></i> Profile </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+            <a class="dropdown-item" href="{% url 'login' %}">Log in</a>
+            <a class="dropdown-item" href="{% url 'register' %}">Sign up</a>
+          </div>
+        </li>
+      </ul>
+    {% endif %}
 
   </div> 
 </nav>
@@ -80,30 +93,51 @@
       <article class="card-body mx-auto">
         <h4 class="card-title text-center">Log in</h4>
         
-        <form>
-         
+        <form action="{% url 'login' %}" method="POST">
+          {% csrf_token %}
           <!-- form-group// -->
           <div class="form-group input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+              <span class="input-group-text"> <i class="fa fa-envelope text-success"></i> </span>
           </div>
-              <input name="" class="form-control" placeholder="Email" type="email">
+              <input name="username" class="form-control" placeholder="User name" type="text">
           </div> 
        
           <!-- form-group// -->
           <div class="form-group input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+              <span class="input-group-text"> <i class="fa fa-lock text-success"></i> </span>
           </div>
-              <input class="form-control" placeholder="Password" type="password">
-          </div> 
+              <input name="password" class="form-control" placeholder="Password" type="password">
+          </div>
+
+          <!-- message --> 
+          {% if messages %}
+          {% for message in messages %}
+            <div id="message" class="container text-danger">
+              <div class="alert alert-{{ message.tags }} alert-dismissible text-center" role="alert">
+                <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <small>
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    Error: 
+                {% else %}
+                    {{ message.tags|title }}
+                {% endif %}
+                </small>
+                <small>{{ message }}</small>
+              </div>
+            </div>
+          {% endfor %}
+          {% endif %}
        
           <!-- form-group// -->                                      
           <div class="form-group">
               <button type="submit" class="btn btn-primary btn-block"> Log in  </button>
           </div> <!-- form-group// --> 
           <p class="text-center">or</p>    
-          <p class="text-center"><a href="{% url 'index' %}">create account</a> </p>                                                                 
+          <p class="text-center"><a href="{% url 'register' %}">create account</a> </p>                                                                 
       </form>
       </article>
   </div> 

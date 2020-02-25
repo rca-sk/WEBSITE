@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Rwandans in Korea</title>
+  <title>Registration| Rwandans in Korea</title>
   <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/rwandakorea.jpeg' %}" />
   <!-- bootstrap css -->
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
@@ -55,8 +55,8 @@
           aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-user"></i> Profile </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-          <a class="dropdown-item" href="{% url 'index' %}">Log in</a>
-          <a class="dropdown-item" href="{% url 'index' %}">Sign up</a>
+          <a class="dropdown-item" href="{% url 'login' %}">Log in</a>
+          <a class="dropdown-item" href="{% url 'register' %}">Sign up</a>
         </div>
       </li>
     </ul>
@@ -78,48 +78,77 @@
       <article class="card-body mx-auto">
         <h4 class="card-title text-center">Sign up for free</h4>
         
-        <form>
+        <form action="{% url 'register' %}" method="POST">
+          {% csrf_token %}
         <div class="form-group input-group">
           <div class="input-group-prepend">
-              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+              <span class="input-group-text"> <i class="fa fa-user text-success"></i> </span>
           </div>
-            <input name="" class="form-control" placeholder="First name" type="text">
+            <input name="first_name" class="form-control" placeholder="First name" type="text" required>
         </div>
 
         <div class="form-group input-group">
           <div class="input-group-prepend">
-              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+              <span class="input-group-text"> <i class="fa fa-user text-success"></i> </span>
           </div>
-            <input name="" class="form-control" placeholder="Last name" type="text">
+            <input name="last_name" class="form-control" placeholder="Last name" type="text" required>
         </div>
 
         <div class="form-group input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+              <span class="input-group-text"> <i class="fa fa-user text-success"></i> </span>
+          </div>
+            <input name="username" class="form-control" placeholder="user name" type="text" required>
         </div>
-            <input name="" class="form-control" placeholder="email" type="email">
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-envelope text-success"></i> </span>
+        </div>
+            <input name="email" class="form-control" placeholder="email" type="email" required>
         </div> 
          
         <div class="form-group input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            <span class="input-group-text"> <i class="fa fa-lock text-success"></i> </span>
         </div>
-            <input class="form-control" placeholder="Password" type="password">
+            <input name="password1" class="form-control" placeholder="Password" type="password" required>
         </div> 
           
         <div class="form-group input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            <span class="input-group-text"> <i class="fa fa-lock text-success"></i> </span>
         </div>
-            <input class="form-control" placeholder="repeat password" type="password">
+            <input name="password2" class="form-control" placeholder="repeat password" type="password" required>
         </div> 
+
+        <!-- message --> 
+        {% if messages %}
+        {% for message in messages %}
+          <div id="message" class="container text-danger">
+            <div class="alert alert-{{ message.tags }} alert-dismissible text-center" role="alert">
+              <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+              </button>
+              <small>
+              {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                  Error: 
+              {% else %}
+                  {{ message.tags|title }}
+              {% endif %}
+              </small>
+              <small>{{ message }}</small>
+            </div>
+          </div>
+        {% endfor %}
+        {% endif %}
                                              
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block"> Register</button>
         </div> 
         
         <p class="text-center">or</p> 
-        <p class="text-center"> <a href="{% url 'index' %}">login</a> </p>                                                                 
+        <p class="text-center"> <a href="{% url 'login' %}">login</a> </p>                                                                 
       </form>
       </article>
   </div>

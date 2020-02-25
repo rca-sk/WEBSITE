@@ -49,17 +49,30 @@
     </ul>
     
 
+    {%  if user.is_authenticated %}
     <ul class="navbar-nav" style="position: fixed; right:2vw;" >
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user"></i> Profile </a>
+          <i class="fas fa-user"></i> {{user.username}} </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-          <a class="dropdown-item" href="{% url 'index' %}">Log in</a>
-          <a class="dropdown-item" href="{% url 'index' %}">Sign up</a>
+          <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
         </div>
       </li>
     </ul>
+    {% else %}
+      <ul class="navbar-nav" style="position: fixed; right:2vw;" >
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user"></i> Profile </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+            <a class="dropdown-item" href="{% url 'login' %}">Log in</a>
+            <a class="dropdown-item" href="{% url 'register' %}">Sign up</a>
+          </div>
+        </li>
+      </ul>
+    {% endif %}
 
   </div> 
 </nav>
@@ -73,22 +86,29 @@
 <h4 style="margin-left: 5%; font-style:italic; font-family:'Times New Roman', Times, serif; font-size:30px;">Events</h4>
 <hr><br>
 
+
+
 <div class="container">
-{% if events %}
-  {% for event in events%}
-    <div class="row py-4">
-      <div class="col-xs-12 col-sm-10 col-md-7 pt-2">
-        <a href="{% url 'event' event.id %}"><h1><b>{{event.title}}</b></h1></a>
-        <p>{{event.summary}}</p>
-        <small><i class="fas fa-clock" style="color: red;"></i> {{event.time}}</small> <br>
-        <small>Posted by: {{event.posted_by}}</small>
-      </div>
-    </div>
-  {% endfor %}
-{% else %}
-{% endif %}
-  
+  <div class="row">
+    {% if events %}
+      {% for post in events %}
+        <div class="col-12 my-1">
+          <div class="card p-2">
+            <h1><b><a href="{% url 'event' post.id %}">{{post.title}}</a></b></h1>
+            <p>{{post.summary}}</p> <br>
+            <div>
+              <i class="fas fa-clock" style="color: red;"></i>
+              <small>{{post.time}}</small><br> 
+              <small>By: {{post.posted_by}}</small>
+            </div>
+            </a>
+          </div>
+        </div>
+      {% endfor%}
+    {% endif%}
+  </div>
 </div>
+
 
 
 <!-- Footer -->

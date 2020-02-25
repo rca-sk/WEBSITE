@@ -3,7 +3,7 @@ from .models import Announcement
 # Create your views here.
 
 def index(request):
-    announcements = Announcement.objects.order('-time').filter(is_published=True)
+    announcements = Announcement.objects.order_by('-time').filter(is_published=True)
     context = {
         'announcements' : announcements
     }

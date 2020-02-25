@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'announcements.apps.AnnouncementsConfig',
     'events.apps.EventsConfig',
     'committee.apps.CommitteeConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,3 +136,19 @@ STATICFILES_DIRS = [
 # media folder
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
+
+
+# EMAIL
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'rcaskcommittee@gmail.com'
+EMAIL_HOST_PASSWORD = '20191211'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
