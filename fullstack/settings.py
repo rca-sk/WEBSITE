@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'events.apps.EventsConfig',
     'committee.apps.CommitteeConfig',
     'accounts.apps.AccountsConfig',
+    'database.apps.DatabaseConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

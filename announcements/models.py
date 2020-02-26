@@ -3,6 +3,9 @@ from datetime import datetime
 from django.core.mail import send_mail
 # Create your models here.
 
+from committee.models import Executive_committee_member, Mayor
+from database.models import CommunityMember
+
 class Announcement(models.Model):
     title               = models.CharField(max_length=200)
     summary             = models.CharField(max_length=300)
@@ -25,18 +28,22 @@ class Announcement(models.Model):
         super(Announcement, self).save(*args, **kwargs)
 
         if self.send_to_committee:
+            executives = [person.email for person in Executive_committee_member.objects.all()]
+            mayors = [mayor.email for mayor in Mayor.objects.all()]
+            recipients = executives + mayors
             send_mail(
                 self.title,
                 self.detail,
                 'rcaskcommittee@gmail.com',
-                ['adriel.tech.email@gmail.com'],
+                recipients,
                 fail_silently = False
             )
         if self.send_to_all_members:
+            recipients = [member.email for member in CommunityMember.objects.all()]
             send_mail(
                 self.title,
                 self.detail,
                 'rcaskcommittee@gmail.com',
-                ['adriel.tech.email@gmail.com', 'siradriel@gmail.com'],
+                recipients,
                 fail_silently=False
             )
