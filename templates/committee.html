@@ -100,7 +100,11 @@
                   <p> <small>{{executive.phone}}</small> </p>
                   <p> <small>{{executive.email}}</small> </p>
               </div>
+              {% if executive.picture %}
               <div class="col-6"><img class="card-img-top" src="{{executive.picture.url}}" style="width: 30vh; border-radius:50%"></div>
+              {% else %}
+              <div class="col-6"><img class="card-img-top" src="{% static 'images/rwandakorea.jpeg' %}" style="width: 30vh; border-radius:50%"></div>
+              {% endif %}
           </div>
           <hr> 
         </div>
@@ -129,7 +133,11 @@
                   <p> <small>{{mayor.phone}}</small> </p>
                   <p> <small>{{mayor.email}}</small> </p>
               </div>
+              {% if mayor.picture %}
               <div class="col-6"><img class="card-img-top" src="{{mayor.picture.url}}" style="width: 30vh; border-radius:50%"></div>
+              {% else %}
+              <div class="col-6"><img class="card-img-top" src="{% static 'images/rwandakorea.jpeg' %}" style="width: 30vh; border-radius:50%"></div>
+              {% endif %}
           </div>
           <hr> 
         </div>

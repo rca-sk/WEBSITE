@@ -138,7 +138,7 @@
           {% if recent_announcements %}
             {% for post in recent_announcements %}
               <div class="col-12 my-1">
-                <div class="card p-2">
+                <div class="card p-3">
                   <h1><b><a href="{% url 'announcement' post.id %}">{{post.title}}</a></b></h1>
                   <p>{{post.summary}}</p> <br>
                   <div>
@@ -149,8 +149,8 @@
                   </a>
                 </div>
               </div>
-            {% endfor%}
-          {% endif%}
+            {% endfor %}
+          {% endif %}
         </div>
       </div>
     </div>
@@ -166,7 +166,7 @@
           {% if recent_events %}
             {% for post in recent_events %}
               <div class="col-12 my-1">
-                <div class="card p-2">
+                <div class="card p-3">
                   <h1><b><a href="{% url 'event' post.id %}">{{post.title}}</a></b></h1>
                   <p>{{post.summary}}</p> <br>
                   <div>
@@ -194,7 +194,8 @@
 
 <!-- Footer -->
 <div class=" footer py-4 text-center" style="background-color:rgb(255, 255, 255) ; color: rgb(0, 0, 0); width: 100%; margin-left:0px;">
-  <b>
+  <small>To report an issue contact: siradriel@gmail.com</small> <br>
+  <b style="font-size: 20px;">
   © 2020  RCA-SK  All Rights Reserved
   </b>
 </div>

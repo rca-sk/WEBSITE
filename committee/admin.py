@@ -7,15 +7,16 @@ from .models import Mayor
 
 class Executive_committee_memberAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'name', 'phone', 'email', 'is_published')
-    list_display_links = ('id', 'name')
-    list_editable = ('is_published', )
-    search_fields = ('name',)
+    list_display_links = ('name',)
+    list_editable = ('id','is_published', )
+    search_fields = ('id', 'title', 'name', 'phone', 'email')
     list_per_page = 20
 
 class MayorAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'name', 'phone', 'email')
-    list_display_links = ('id', 'name')
-    search_fields = ('name',)
+    list_display = ('id', 'title', 'name', 'phone', 'email','is_published')
+    list_display_links = ('name',)
+    list_editable = ('id','is_published', )
+    search_fields = ('id', 'title', 'name', 'phone', 'email')
     list_per_page = 20
 
 # Register your models here.
