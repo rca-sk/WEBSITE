@@ -140,7 +140,7 @@
               <div class="col-12 my-1">
                 <div class="card p-3">
                   <h1><b><a href="{% url 'announcement' post.id %}">{{post.title}}</a></b></h1>
-                  <p>{{post.summary}}</p> <br>
+                  <p>{{post.summary|linebreaks}}</p> <br>
                   <div>
                     <i class="fas fa-clock" style="color: red;"></i>
                     <small>{{post.time}}</small><br> 
@@ -168,7 +168,7 @@
               <div class="col-12 my-1">
                 <div class="card p-3">
                   <h1><b><a href="{% url 'event' post.id %}">{{post.title}}</a></b></h1>
-                  <p>{{post.summary}}</p> <br>
+                  <p>{{post.summary|linebreaks}}</p> <br>
                   <div>
                     <i class="fas fa-clock" style="color: red;"></i>
                     <small>{{post.time}}</small><br> 
