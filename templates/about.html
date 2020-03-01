@@ -88,8 +88,8 @@
 
 <div class="container">
     <div class="row align-items-center p-3">
-        <div class="col-5 text-right"><img class="cartd-img-top" src="{% static 'images/logo.jpg' %}" style="width: 50vh; border-radius:50%"></div>
-        <div class="col-6 text-start">
+        <div class="col col-md-5 text-center"><img class="cartd-img-top" src="{% static 'images/logo.jpg' %}" style="width: 50vh; border-radius:50%"></div>
+        <div class="col col-md-6 text-center">
             <h1><strong>About RCA-SK</strong></h1>
         </div>
     </div>
@@ -109,7 +109,7 @@
     <div class="row align-items-center p-3">
         <div class="col-5 text-right"><img class="card-img-top" src="{{about.chairman_picture.url}}" style="width: 25vh; border-radius:50%"></div>
         <div class="col-6 text-start">
-            <p><b>RCA-SK Chairman: {{about.chairman_name}}</b></p>
+            <p><i>RCA-SK Chairman: {{about.chairman_name}}</i></p>
         </div>
     </div>
     {% endif %}
