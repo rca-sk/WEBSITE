@@ -10,8 +10,6 @@ class Event(models.Model):
     time                = models.DateTimeField(default = datetime.now, blank=True)
     posted_by           = models.CharField(max_length=100)
     is_published        = models.BooleanField(default=True)
-    send_to_committee   = models.BooleanField(default=False)
-    send_to_all_members = models.BooleanField(default=False)
     picture1            = models.ImageField(upload_to='photos/events/%Y/%m/%d/', blank=True)
     picture2            = models.ImageField(upload_to='photos/events/%Y/%m/%d/', blank=True)
     picture3            = models.ImageField(upload_to='photos/events/%Y/%m/%d/', blank=True)

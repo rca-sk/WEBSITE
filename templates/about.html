@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Rwandans in Korea</title>
+  <title>About RCA-SK</title>
   <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo.jpg' %}" />
   <!-- bootstrap css -->
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
@@ -54,6 +54,7 @@
       </li>
     </ul>
     
+
     {%  if user.is_authenticated %}
     <ul class="navbar-nav" style="position: fixed; right:2vw;" >
       <li class="nav-item dropdown">
@@ -83,77 +84,42 @@
 </nav>
 <!-- end-navbar -->
 
-<br>
-
-<!-- society stories -->
-
 <br><br><br> <br>
-<h4 style="margin-left: 5%; font-style:italic; font-family:'Times New Roman', Times, serif; font-size:30px;">RCA-SK Committee</h4>
-<hr><br>
 
 <div class="container">
-<h4 style="margin-left: 5%; font-style:italic; font-family:'Times New Roman', Times, serif; font-size:30px;">Executive committee</h4>
-<hr>
-<div class="row py-4">
-    {% if executives %}
-      {% for executive in executives %}
-        <div class="col-12 col-lg-6 my-3">
-          <div class="row">
-              <div class="col-12 col-lg-6">
-                  <h3><b>{{executive.title}}</b></h3>
-                  <p><b> {{executive.name}}</b></p>
-                  <p><small> {{executive.introduction|linebreaks}}</small></p>
-                  <p> <small>{{executive.phone}}</small> </p>
-                  <p> <small>{{executive.email}}</small> </p>
-              </div>
-              {% if executive.picture %}
-              <div class="col-6"><img class="card-img-top" src="{{executive.picture.url}}" style="width: 30vh; border-radius:50%"></div>
-              {% else %}
-              <div class="col-6"><img class="card-img-top" src="{% static 'images/rwandakorea.jpeg' %}" style="width: 30vh; border-radius:50%"></div>
-              {% endif %}
-          </div>
-          <hr> 
+    <div class="row align-items-center p-3">
+        <div class="col-5 text-right"><img class="cartd-img-top" src="{% static 'images/logo.jpg' %}" style="width: 50vh; border-radius:50%"></div>
+        <div class="col-6 text-start">
+            <h1><strong>About RCA-SK</strong></h1>
         </div>
-      {% endfor %}
-
-    {% else %}
-    {% endif%}
-
-  </div>
-
+    </div>
+    {% if about %}
+    <div class="row">
+        <div class="col">
+          <div class="card p-5">
+            <p>{{about.paragraph1|linebreaks}}</p>
+            <p>{{about.paragraph2|linebreaks}}</p>
+            <p>{{about.paragraph3|linebreaks}}</p>
+            <p>{{about.paragraph4|linebreaks}}</p>
+            <p>{{about.paragraph5|linebreaks}}</p>
+          </div>
+        </div>
+    </div>
+    <br>
+    <div class="row align-items-center p-3">
+        <div class="col-5 text-right"><img class="card-img-top" src="{{about.chairman_picture.url}}" style="width: 25vh; border-radius:50%"></div>
+        <div class="col-6 text-start">
+            <p><b>RCA-SK Chairman: {{about.chairman_name}}</b></p>
+        </div>
+    </div>
+    {% endif %}
 </div>
 
-<br><br><br>
-<div class="container">
-<h4 style="margin-left: 5%; font-style:italic; font-family:'Times New Roman', Times, serif; font-size:30px;">Mayors</h4>
-<hr>
-<div class="row py-4">
-  {% if mayors %}
-      {% for mayor in mayors %}
-        <div class="col-12 col-lg-6 my-3">
-          <div class="row">
-              <div class="col-12 col-lg-6">
-                  <h3><b>{{mayor.title}}</b></h3>
-                  <p><b> {{mayor.name}}</b></p>
-                  <p><small> {{mayor.introduction|linebreaks}}</small></p>
-                  <p> <small>{{mayor.phone}}</small> </p>
-                  <p> <small>{{mayor.email}}</small> </p>
-              </div>
-              {% if mayor.picture %}
-              <div class="col-6"><img class="card-img-top" src="{{mayor.picture.url}}" style="width: 30vh; border-radius:50%"></div>
-              {% else %}
-              <div class="col-6"><img class="card-img-top" src="{% static 'images/rwandakorea.jpeg' %}" style="width: 30vh; border-radius:50%"></div>
-              {% endif %}
-          </div>
-          <hr> 
-        </div>
-      {% endfor %}
+<br><br>
 
-    {% else %}
-    {% endif%}
-  </div>
 
-</div>
+
+
 
 <!-- Footer -->
 <div class=" footer py-4 text-center" style="background-color:rgb(255, 255, 255) ; color: rgb(0, 0, 0); width: 100%; margin-left:0px;">
@@ -163,6 +129,7 @@
 </div>
     
 <!-- end-footer -->
+
 
 
 <!-- jquery -->

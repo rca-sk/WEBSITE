@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'committee.apps.CommitteeConfig',
     'accounts.apps.AccountsConfig',
     'database.apps.DatabaseConfig',
+    'carrier.apps.CarrierConfig',
+    'emails.apps.EmailsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

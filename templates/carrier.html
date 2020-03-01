@@ -54,6 +54,7 @@
       </li>
     </ul>
     
+
     {%  if user.is_authenticated %}
     <ul class="navbar-nav" style="position: fixed; right:2vw;" >
       <li class="nav-item dropdown">
@@ -85,75 +86,32 @@
 
 <br>
 
-<!-- society stories -->
-
 <br><br><br> <br>
-<h4 style="margin-left: 5%; font-style:italic; font-family:'Times New Roman', Times, serif; font-size:30px;">RCA-SK Committee</h4>
+<h4 style="margin-left: 5%; font-style:italic; font-family:'Times New Roman', Times, serif; font-size:30px;">Carrier & Academics</h4>
 <hr><br>
 
 <div class="container">
-<h4 style="margin-left: 5%; font-style:italic; font-family:'Times New Roman', Times, serif; font-size:30px;">Executive committee</h4>
-<hr>
-<div class="row py-4">
-    {% if executives %}
-      {% for executive in executives %}
-        <div class="col-12 col-lg-6 my-3">
-          <div class="row">
-              <div class="col-12 col-lg-6">
-                  <h3><b>{{executive.title}}</b></h3>
-                  <p><b> {{executive.name}}</b></p>
-                  <p><small> {{executive.introduction|linebreaks}}</small></p>
-                  <p> <small>{{executive.phone}}</small> </p>
-                  <p> <small>{{executive.email}}</small> </p>
-              </div>
-              {% if executive.picture %}
-              <div class="col-6"><img class="card-img-top" src="{{executive.picture.url}}" style="width: 30vh; border-radius:50%"></div>
-              {% else %}
-              <div class="col-6"><img class="card-img-top" src="{% static 'images/rwandakorea.jpeg' %}" style="width: 30vh; border-radius:50%"></div>
-              {% endif %}
+  <div class="row">
+    {% if carrier_announcements %}
+      {% for post in carrier_announcements %}
+        <div class="col-12 my-1">
+          <div class="card p-2">
+            <h1><b><a href="{% url 'carrier_announcement' post.id %}">{{post.title}}</a></b></h1>
+            <p>{{post.summary|linebreaks}}</p> <br>
+            <div>
+              <i class="fas fa-clock" style="color: red;"></i>
+              <small>{{post.time}}</small><br> 
+              <small>By: {{post.posted_by}}</small>
+            </div>
+            </a>
           </div>
-          <hr> 
         </div>
-      {% endfor %}
-
-    {% else %}
-    {% endif%}
-
-  </div>
-
-</div>
-
-<br><br><br>
-<div class="container">
-<h4 style="margin-left: 5%; font-style:italic; font-family:'Times New Roman', Times, serif; font-size:30px;">Mayors</h4>
-<hr>
-<div class="row py-4">
-  {% if mayors %}
-      {% for mayor in mayors %}
-        <div class="col-12 col-lg-6 my-3">
-          <div class="row">
-              <div class="col-12 col-lg-6">
-                  <h3><b>{{mayor.title}}</b></h3>
-                  <p><b> {{mayor.name}}</b></p>
-                  <p><small> {{mayor.introduction|linebreaks}}</small></p>
-                  <p> <small>{{mayor.phone}}</small> </p>
-                  <p> <small>{{mayor.email}}</small> </p>
-              </div>
-              {% if mayor.picture %}
-              <div class="col-6"><img class="card-img-top" src="{{mayor.picture.url}}" style="width: 30vh; border-radius:50%"></div>
-              {% else %}
-              <div class="col-6"><img class="card-img-top" src="{% static 'images/rwandakorea.jpeg' %}" style="width: 30vh; border-radius:50%"></div>
-              {% endif %}
-          </div>
-          <hr> 
-        </div>
-      {% endfor %}
-
-    {% else %}
+      {% endfor%}
     {% endif%}
   </div>
-
 </div>
+
+
 
 <!-- Footer -->
 <div class=" footer py-4 text-center" style="background-color:rgb(255, 255, 255) ; color: rgb(0, 0, 0); width: 100%; margin-left:0px;">
@@ -165,8 +123,11 @@
 <!-- end-footer -->
 
 
+
+
+
 <!-- jquery -->
-<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script src= "{% static 'js/jquery-3.4.1.min.js' %}"></script>
 <!-- bootstrap js -->
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 <!-- main js -->
