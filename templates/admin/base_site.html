@@ -2,10 +2,16 @@
 
 {% load static %}
 
+{% block extrahead %}
+
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo.jpg' %}" />
+
+{% endblock %}
+
 {% block branding %}
 
     <h1 id="head">
-        <img src="{% static 'images/rwandakorea.jpeg' %}" alt="RCA SK Admin" height="50" width="70" class="brand_img">
+        <img src="{% static 'images/logo.jpg' %}" alt="RCA SK Admin" height="50" width="70" class="brand_img">
         RCA-SK Admin
     </h1>
 {% endblock %}
@@ -14,4 +20,6 @@
 {% block extrastyle %}
     <link rel="stylesheet" href="{% static 'css/admin.css' %}">
 {% endblock %}
+
+
 
