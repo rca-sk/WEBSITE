@@ -96,22 +96,37 @@
     {% if about %}
     <div class="row">
         <div class="col">
-          <div class="card p-5">
-            <p>{{about.paragraph1|linebreaks}}</p>
+          <div class="card p-3">
+            <div class="row">
+              <div class="col-12 col-md-4 text-center">
+                <img class="" src="{{about.chairman_picture.url}}" style="width: 50%; border-radius:50%">
+              </div>
+              <div class="col-12 col-md-8">
+                <p>{{about.paragraph1|linebreaks}}</p>
+              </div>
+            </div>
             <p>{{about.paragraph2|linebreaks}}</p>
             <p>{{about.paragraph3|linebreaks}}</p>
             <p>{{about.paragraph4|linebreaks}}</p>
             <p>{{about.paragraph5|linebreaks}}</p>
+            <div class="row">
+              <div class="col-12 text-right">
+                <img class="" src="{{about.chairman_signature.url}}" style="width: 60%">
+              </div>
+            </div>
           </div>
         </div>
     </div>
     <br>
+<<<<<<< HEAD
     <div class="row align-items-center p-3">
         <div class="col col-md-5 text-right"><img class="card-img-top" src="{{about.chairman_picture.url}}" style="width: 25vh; border-radius:50%"></div>
         <div class="col col-md-6 text-start">
             <p><i>RCA-SK Chairman: {{about.chairman_name}}</i></p>
         </div>
     </div>
+=======
+>>>>>>> 6589e24e57b1a907545469da038615836e14ed16
     {% endif %}
 </div>
 

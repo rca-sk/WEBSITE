@@ -10,8 +10,11 @@ class About(models.Model):
     paragraph3          = models.TextField(blank=True)
     paragraph4          = models.TextField(blank=True)
     paragraph5          = models.TextField(blank=True)
+    paragraph6          = models.TextField(blank=True)
+    paragraph7          = models.TextField(blank=True)
     time                = models.DateTimeField(default = datetime.now, blank=True)
     chairman_picture    = models.ImageField(upload_to='photos/about/%Y/%m/%d/', blank=True)
+    chairman_signature  = models.ImageField(upload_to='photos/about/%Y/%m/%d/', blank=True)
 
 
     def __str__(self):
