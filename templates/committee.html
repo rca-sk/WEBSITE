@@ -97,9 +97,9 @@
 <div class="row py-4">
     {% if executives %}
       {% for executive in executives %}
-        <div class="col-12 col-lg-6 my-3">
+        <div class="col-md-6  my-3">
           <div class="row">
-              <div class="col-12 col-lg-6">
+              <div class="col-md-6">
                   <h3><b>{{executive.title}}</b></h3>
                   <p><b> {{executive.name}}</b></p>
                   <p><small> {{executive.introduction|linebreaks}}</small></p>
@@ -107,9 +107,9 @@
                   <p> <small>{{executive.email}}</small> </p>
               </div>
               {% if executive.picture %}
-              <div class="col-6"><img class="card-img-top" src="{{executive.picture.url}}" style="width: 30vh; border-radius:50%"></div>
+              <div class="col-md-5"><img class="card-img-top" src="{{executive.picture.url}}" style="width:75%; border-radius:50%"></div>
               {% else %}
-              <div class="col-6"><img class="card-img-top" src="{% static 'images/rwandakorea.jpeg' %}" style="width: 30vh; border-radius:50%"></div>
+              <div class="col-md-5"><img class="card-img-top" src="{% static 'images/rwandakorea.jpeg' %}" style="width:75%; border-radius:50%"></div>
               {% endif %}
           </div>
           <hr> 
@@ -130,9 +130,9 @@
 <div class="row py-4">
   {% if mayors %}
       {% for mayor in mayors %}
-        <div class="col-12 col-lg-6 my-3">
+        <div class="col-md-6  my-3">
           <div class="row">
-              <div class="col-12 col-lg-6">
+              <div class="col-md-6">
                   <h3><b>{{mayor.title}}</b></h3>
                   <p><b> {{mayor.name}}</b></p>
                   <p><small> {{mayor.introduction|linebreaks}}</small></p>
@@ -140,9 +140,9 @@
                   <p> <small>{{mayor.email}}</small> </p>
               </div>
               {% if mayor.picture %}
-              <div class="col-6"><img class="card-img-top" src="{{mayor.picture.url}}" style="width: 30vh; border-radius:50%"></div>
+              <div class="col-md-5"><img class="card-img-top" src="{{mayor.picture.url}}" style="width:75%; border-radius:50%"></div>
               {% else %}
-              <div class="col-6"><img class="card-img-top" src="{% static 'images/rwandakorea.jpeg' %}" style="width: 30vh; border-radius:50%"></div>
+              <div class="col-md-5"><img class="card-img-top" src="{% static 'images/rwandakorea.jpeg' %}" style="width:75%; border-radius:50%"></div>
               {% endif %}
           </div>
           <hr> 
